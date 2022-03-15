@@ -1,0 +1,160 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../public/stylesheets/all.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+
+</head>
+
+<body>
+    <main>
+        <header class="py-3 mb-3 border-bottom">
+            <div class="d-flex align-items-center">
+                <img src="/public/images/logo.png" height="50px" alt="">
+                <form class="w-100">
+                    <div class="mx-5 col-md-10">
+                        <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+                    </div>
+                </form>
+                <div class="d-flex">
+                    <button class="ms-5 btn btn-secondary">Ingresar</button>
+                    <button class="me-5 mx-3 btn btn-secondary">Registrarse</button>
+                </div>
+            </div>
+            </div>
+        </header>
+        <div class="b-example-divider"></div>
+    </main>
+
+    <div class="container-fluid" id="nav-align">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-1">
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>EXPLORAR</span>
+                    </h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" aria-current="page" href="#">
+                                <span data-feather="calendar"></span>
+                                Recientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="heart"></span>
+                                Mas likes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="shuffle"></span>
+                                Aleatorio
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>CATEGORÍAS</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="edit-3"></span>
+                                Arte
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="film" class="fas fa-user"></span>
+                                Cine
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="dribbble" class="fas fa-user"></span>
+                                Deportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="cpu"></span>
+                                Tecnología
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span class="bi-tree fa-lg"></span>
+                                Naturaleza
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span class="bi-controller fa-lg"></span>
+                                Videojuegos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon-color" href="#">
+                                <span data-feather="grid"></span>
+                                Variado
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                {{{body}}}
+            </main>
+
+            
+        </div>
+    </div>
+
+
+</body>
+<script>
+    feather.replace()
+</script>
+<style>
+    .icon-color {
+        color: black;
+    }
+
+    #nav-align {
+        margin-top: -16px;
+    }
+
+    .carousel-control-prev-icon {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .carousel-control-next-icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .properties-top {
+        margin-top: -10px;
+    }
+</style>
+
+</html>
