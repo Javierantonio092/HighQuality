@@ -1,11 +1,13 @@
 const path = require('path');
 const {randomNumber} = require('../helpers/libs');
 const fs = require ('fs-extra');
+const md5 = require('md5');
 const {Post} = require('../model');
+const {Comment} = require('../model');
 const ctrl = {};
 
 ctrl.index =  async(req, res, next)=>{
-    let viewModel = { post: {} };
+    let viewModel = { post: {}, comments: [] };
     const post = await Post.findOne({
         fileName: {$regex: req.params.post_id},
     });
@@ -19,6 +21,13 @@ ctrl.index =  async(req, res, next)=>{
         { $inc: { views: 1 } }
     ).lean();
     viewModel.post = updatedPost;
+    
+    // get image comments
+     const comments = await Comment.find({ post_id: post._id }).sort({
+        timestamp: 1,
+    });
+
+    viewModel.comments = comments;
 
     console.log(viewModel)
     res.render('posts', viewModel);
@@ -63,9 +72,20 @@ ctrl.like = (req, res)=>{
    
 };
 
-ctrl.comment = (req, res)=>{
-   console.log(req.body);
-   res.send('comment');
+ctrl.comment = async(req, res)=>{
+    const post = await Post.findOne({
+        fileName: { $regex: req.params.post_id },
+      });
+      if (post) {
+        const newComment = new Comment(req.body);
+        newComment.gravatar = md5(newComment.email);
+        newComment.post_id = post._id;
+        
+        await newComment.save();
+        res.redirect("/posts/" + post.uniqueId + "#" + newComment._id);
+    } else {
+        res.redirect("/");
+    }
 };
 
 ctrl.delete = (req, res)=>{

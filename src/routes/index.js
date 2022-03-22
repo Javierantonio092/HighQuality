@@ -12,7 +12,7 @@ module.exports = app =>{
   router.get('/posts/:post_id', post.index);
   router.post('/post', post.create);
   router.post('/post/:post_id/like', post.like);
-  router.post('/post/:post_id/comment', post.comment);
+  router.post('/posts/:post_id/comment', post.comment);
   router.delete('/post/:post_id', post.delete);
   // router.get('/', function(req, res, next) {
   //   res.render('descriptionImage', { title: 'Express' });
