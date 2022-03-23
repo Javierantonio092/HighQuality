@@ -1,34 +1,65 @@
+<<<<<<< HEAD
  <div class="card">
   <div class="card-header bg-dark">
     <h3 class="card-title text-white">
         <i class="far fa-image"></i> Upload and image
     </h3>
+=======
+<div class="card bg-secondary text-black">
+
+  <div class="card-header d-flex align-items-center">
+    <span class="material-icons me-2">
+      cloud_upload
+    </span>
+    Upload an Image
+>>>>>>> 89548c79c7f4e1eda43a2dde4379949bcbb47072
   </div>
-  <div class="card-body">
-      <form action="/post" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" name="post" class="custom-file-input" id="inputGroup" aria-describedby="inputGroupFileAddon" required>
-                        <label class="custom-file-label" for="inputGroupFile">Choose file</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-grup">
-                <input type="text" name="title" class="form-control" placeholder="Title for the image" required>
-            </div>            
-            <div class="form-group">
-                <textarea name="description" rows="2" class="form-control" placeholder="Description for image" required></textarea>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-success">
-                    <i class="fa fa-upload"></i> upload image
-                </button>
-            </div>
-      </form>
+
+  {{! IMAGE UPLOAD FORM }}
+  <div class="card-body p-5">
+    <form action="/post" method="POST" enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <input
+          type="file"
+          name="post"
+          class="form-control text-dark border-primary"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          name="title"
+          class="form-control bg-light text-black border border-primary"
+          placeholder="Title for the Image"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <textarea
+          name="description"
+          rows="2"
+          class="form-control bg-light text-black border border-primary"
+          placeholder="Deescription for the Image"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success">
+          <i class="fa fa-upload"></i>
+          Upload Image
+        </button>
+      </div>
+
+    </form>
   </div>
 </div>
 
+<<<<<<< HEAD
 <div class="card mt-2">
     <div class="card-header bg-dark text-white">
         <h3><i class="far fa-images"></i> Subidas recientes</h3>
@@ -39,5 +70,37 @@
                 {{description}}
             {{/each}}
        </div>
+=======
+<div class="card mt-2 bg-secondary text-black">
+  <div class="card-header d-flex align-items-center">
+    <span class="material-icons me-2">
+      cloud
+    </span>
+    Recent Uploads
+  </div>
+  <div class="card-body p-5">
+    <div class="row">
+      {{#each posts}}
+        <div class="col-md-4 text-center">
+          <a href="/posts/{{uniqueId}}">
+            <img
+              src="/uploads/{{fileName}}"
+              alt="{{title}}"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+            />
+          </a>
+        </div>
+      {{else}}
+        <div class="text-black text-center p-5">
+          <h1 class="text-light">There are no Images <strong>yet</strong></h1>
+          <p>Upload your first image</p>
+          <span class="material-icons" style="font-size: 7rem;">
+            add_a_photo
+          </span>
+        </div>
+      {{/each}}
+>>>>>>> 89548c79c7f4e1eda43a2dde4379949bcbb47072
     </div>
+  </div>
 </div>
