@@ -1,4 +1,4 @@
-// Using Node.js `require()`
+
 const mongoose = require('mongoose');
 
 const {database} = require('./keys');

@@ -1,6 +1,5 @@
 const path = require('path');
 const exphbs = require('express-handlebars');
-
 const morgan = require('morgan');
 const multer = require('multer');
 const express = require('express');
@@ -12,7 +11,7 @@ const routes = require('../routes/index');
 module.exports = app => {
     //settings
     app.set('port', process.env.PORT || '3000');
-    app.set('views', path.join(__dirname, '../views'));
+    app.set('views', path.join(__dirname, "../views"));
     app.engine('.hbs', exphbs.engine({
         defaultLayout: 'main',
         partialsDir: path.join(app.get('views'), 'partials'),
@@ -22,9 +21,12 @@ module.exports = app => {
     }));
     app.set('view engine', '.hbs');
 
+    //Uploads Settings
+    app.use(multer({ dest: "./uploads" }).single("post"));
+ 
+
     //middlewares
     app.use(morgan('dev'));
-    app.use(multer({dest: path.join(__dirname, '../public/upload/temp')}).single('post'));
     app.use(express.urlencoded({extended: false}));
     app.use(express.json());
 
@@ -33,6 +35,7 @@ module.exports = app => {
 
     //static files
     app.use('/public',express.static(path.join(__dirname, '../public')));
+    app.use("/uploads", express.static("./uploads"));
 
     // errorhanddlers
     if('development'== app.get('env')){
