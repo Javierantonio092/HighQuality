@@ -1,7 +1,7 @@
 <div class="card  text-black">
   <div class="card-header d-flex justify-content-between align-items-center">
     <h2 class="card-title">{{ post.title }}</h2>
-    <button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{post.uniqueId}}">
+    <button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{post.fileName}}">
       <i class="fa fa-times"></i> Delete
     </button>
   </div>
@@ -39,7 +39,7 @@
   </div>
   <div class="card-body ">
     <blockquote id="post-comment">
-      <form action="/posts/{{post.uniqueId}}/comment" method="POST">
+      <form action="/posts/{{post.fileName}}/comment" method="POST">
         <div class="form-group mb-3">
           <input type="text" class="form-control  text-black border border-primary" name="name"
             placeholder="Name">
@@ -69,7 +69,7 @@
           <blockquote class="col">
             <p class="lead">{{comment}}</p>
             <footer class="blockquote-footer">
-              {{name}}- {{timeago timestamp}}
+              {{name}} - {{timeago timestamp}}
             </footer>
           </blockquote>
         </div>

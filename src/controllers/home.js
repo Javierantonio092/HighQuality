@@ -1,6 +1,7 @@
 const ctrl= {}; 
 
 const {Post} = require('../model');
+const sidebar = require('../helpers/sidebar')
 
 ctrl.index  = async (req, res, next) =>{
   try {
@@ -10,6 +11,7 @@ ctrl.index  = async (req, res, next) =>{
 
     let viewModel = { posts: [] };
     viewModel.posts = posts; 
+    viewModel = await sidebar(viewModel);
     res.render('post', viewModel);
   } catch (error) {
     next(error);
