@@ -25,9 +25,11 @@ ctrl.index =  async(req, res, next)=>{
     viewModel.post = updatedPost;
     
     // get image comments
-     const comments = await Comment.find({ post_id: post._id }).sort({
-        timestamp: 1,
-    });
+     const comments = await Comment.find({ post_id: post._id })
+        .sort({timestamp: 1 })
+        .lean({ virtuals: true });
+        
+   
 
     viewModel.comments = comments;
     viewModel = await sidebar(viewModel);
@@ -96,7 +98,7 @@ ctrl.comment = async(req, res)=>{
         newComment.post_id = post._id;
         
         await newComment.save();
-        res.redirect("/posts/" + post.uniqueId + "#" + newComment._id);
+        res.redirect("/posts/" + post.uniqueId);
     } else {
         res.redirect("/");
     }
