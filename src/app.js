@@ -3,6 +3,10 @@ const config = require ('./server/config')
 
 //database
 require('./database');
+<<<<<<< HEAD
+=======
+require('./config/passport')
+>>>>>>> Grbranch
 
 const app = config(express());
 

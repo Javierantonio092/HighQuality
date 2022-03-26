@@ -4,8 +4,12 @@ const morgan = require('morgan');
 const multer = require('multer');
 const express = require('express');
 const errorHandler = require('errorhandler');
-const routes = require('../routes/index');
 
+const flash = require("connect-flash");
+const session = require ("express-session");
+const passport = require ("passport");
+const indexRoutes = require('../routes/index');
+const authRoutes = require('../routes/auth');
 
 
 module.exports = app => {
@@ -30,8 +34,33 @@ module.exports = app => {
     app.use(express.urlencoded({extended: false}));
     app.use(express.json());
 
+    app.use(
+        session({
+          secret: "somesecretkey",
+          resave: true,
+          saveUninitialized: true,
+        })
+    );
+    app.use(flash());
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+    // Global Variables
+    app.use((req, res, next) => {
+    // the curren user session
+    app.locals.user = req.user || null;
+    // succes messages by flash
+    app.locals.success = req.flash("success");
+    // passport authentication erros
+    app.locals.error = req.flash("error");
+    next();
+  });
+
+  
     //routers
-    routes(app);   
+
+    indexRoutes(app);
+    authRoutes(app);
     //static files
     app.use('/public',express.static(path.join(__dirname, '../public')));
     app.use("/uploads", express.static("./uploads"));
