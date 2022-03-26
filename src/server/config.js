@@ -4,8 +4,8 @@ const morgan = require('morgan');
 const multer = require('multer');
 const express = require('express');
 const errorHandler = require('errorhandler');
-
 const routes = require('../routes/index');
+
 
 
 module.exports = app => {
@@ -31,8 +31,7 @@ module.exports = app => {
     app.use(express.json());
 
     //routers
-    routes(app);
-
+    routes(app);   
     //static files
     app.use('/public',express.static(path.join(__dirname, '../public')));
     app.use("/uploads", express.static("./uploads"));
@@ -45,3 +44,4 @@ module.exports = app => {
     return app;
  
 }
+

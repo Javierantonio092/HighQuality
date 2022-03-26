@@ -8,3 +8,5 @@ const UserSchema = new Schema({
  gravatar:{type: String},
  role:{type: String}
 })
+
+
