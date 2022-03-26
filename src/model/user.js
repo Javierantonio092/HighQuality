@@ -1,17 +1,6 @@
 const {Schema, model} = require('mongoose');
 const bcrypt = require ("bcrypt");
 
-<<<<<<< HEAD
-const UserSchema = new Schema({
- username:{type: String},
- email:{type: String},
- password:{type: String},
- gravatar:{type: String},
- role:{type: String}
-})
-
-
-=======
 const userSchema = new Schema(
     {
       email: {
@@ -40,4 +29,3 @@ userSchema.statics.encryptPassword = async (password) => {
   };
 
   module.exports = model('User', userSchema);
->>>>>>> Grbranch

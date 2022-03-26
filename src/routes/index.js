@@ -4,7 +4,6 @@ const router = express.Router();
 
 const home = require('../controllers/home');
 const post = require('../controllers/post');
-//const user = require('../controllers/users');
 
 /* GET home page. */
 module.exports = app =>{
@@ -19,8 +18,5 @@ module.exports = app =>{
 
   app.use(router);
 };
-
-
-
 
 
