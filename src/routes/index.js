@@ -14,9 +14,7 @@ module.exports = app =>{
   router.post('/posts/:post_id/like', post.like);
   router.post('/posts/:post_id/comment', post.comment);
   router.delete('/posts/:post_id', post.delete);
-  // router.get('/', function(req, res, next) {
-  //   res.render('descriptionImage', { title: 'Express' });
-  // });
+  
 
   app.use(router);
 };
@@ -25,4 +23,3 @@ module.exports = app =>{
 
 
 
-//module.exports = router;

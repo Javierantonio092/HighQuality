@@ -3,7 +3,7 @@ const express = require ('express');
 const config = require ('./server/config')
 //database
 require('./database');
-
+require('./config/passport')
 
 const app = config(express());
 
