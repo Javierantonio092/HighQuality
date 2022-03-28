@@ -5,8 +5,8 @@ helpers.timeago = timestamp => {
   return moment(timestamp).startOf("minute").fromNow();
 };
 
-//export const getCurrentYear = () => {
- // return new Date().getFullYear();
-//};
+helpers.getCurrentYear = () => {
+  return new Date().getFullYear();
+};
 
 module.exports = helpers;

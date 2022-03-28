@@ -35,6 +35,7 @@ ctrl.index =  async(req, res, next)=>{
     viewModel = await sidebar(viewModel);
 
     console.log(viewModel)
+    
     res.render('posts', viewModel);
 };
 
@@ -56,8 +57,10 @@ ctrl.create  =  (req, res)=>{
                 const newPost = new Post({
                     title: req.body.title,
                     fileName: postURl + ext,
-                    description: req.body.description
+                    description: req.body.description,
+                    user: req.user._id
                 });
+                
                 const postSaved = await newPost.save();
                 //res.send('works');
                 res.redirect("/posts/" + postSaved.uniqueId);

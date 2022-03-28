@@ -34,4 +34,10 @@ ctrl.logout = (req, res) => {
   res.redirect("/");
 };
 
+ctrl.indexAdmin = (req, res) => {
+  res.render("indexAdmin", {
+    layout: "nostats",
+  });
+};
+
 module.exports = ctrl;
