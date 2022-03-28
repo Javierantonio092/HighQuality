@@ -22,7 +22,7 @@ module.exports = app => {
         extname: '.hbs',
         helpers: require('./helpers')
     }));
-    app.set('view engine', '.hbs');
+    app.set('view engine','.hbs');
 
     //Uploads Settings
     app.use(multer({ dest: "./uploads" }).single("post"));

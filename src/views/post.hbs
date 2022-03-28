@@ -1,11 +1,24 @@
-
 <div class="card bg-secondary text-black">
-
+  
+  <div class="card-header d-flex align-items-center">
+    <span class="material-icons me-2">
+      account_box
+    </span>
+     Perfil
+  </div>
+  <div class="card-body">
+    <p>email: {{user.email}}</p>
+    <p>desde: {{user.createdAt}}</p>
+  </div>
+  
+</div>
+<div class="card mt-2 bg-secondary text-black">
+  
   <div class="card-header d-flex align-items-center">
     <span class="material-icons me-2">
       cloud_upload
     </span>
-    Upload an Image
+    Subir Imágenes
   </div>
 
   {{! IMAGE UPLOAD FORM }}
@@ -26,7 +39,7 @@
           type="text"
           name="title"
           class="form-control bg-light text-black border border-primary"
-          placeholder="Title for the Image"
+          placeholder="Título"
           required
         />
       </div>
@@ -36,7 +49,7 @@
           name="description"
           rows="2"
           class="form-control bg-light text-black border border-primary"
-          placeholder="Deescription for the Image"
+          placeholder="Descripción"
           required
         ></textarea>
       </div>
@@ -44,7 +57,7 @@
       <div class="form-group">
         <button class="btn btn-success">
           <i class="fa fa-upload"></i>
-          Upload Image
+          Subir Imagen
         </button>
       </div>
 
@@ -57,7 +70,7 @@
     <span class="material-icons me-2">
       cloud
     </span>
-    Recent Uploads
+    Subidas recientes
   </div>
   <div class="card-body p-5">
     <div class="row">
@@ -74,8 +87,8 @@
         </div>
       {{else}}
         <div class="text-black text-center p-5">
-          <h1 class="text-light">There are no Images <strong>yet</strong></h1>
-          <p>Upload your first image</p>
+          <h1 class="text-light">No hay imágenes que mostrar <strong>yet</strong></h1>
+          <p>Sube tu primera imagen</p>
           <span class="material-icons" style="font-size: 7rem;">
             add_a_photo
           </span>

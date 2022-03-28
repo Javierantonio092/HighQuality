@@ -2,7 +2,7 @@
   <div class="card-header d-flex justify-content-between align-items-center">
     <h2 class="card-title">{{ post.title }}</h2>
     <button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{post.fileName}}">
-      <i class="fa fa-times"></i> Delete
+      <i class="fa fa-times"></i> Eliminar
     </button>
   </div>
   <div class="card-body">
@@ -13,7 +13,7 @@
   </div>
   <div class="card-footer d-flex justify-content-between align-items-center">
     <button class="btn btn-success" id="btn-like" data-id="{{post.fileName}}">
-      <i class="fas fa-thumbs-up"></i> Like
+      <i class="fas fa-thumbs-up"></i> Me gusta
     </button>
     <p>
       <span class="likes-count">{{post.likes}}</span>
@@ -32,9 +32,9 @@
 <!-- COMMENTS -->
 <div class="card mt-2  text-black">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <h3 class="card-title">Comments</h3>
+    <h3 class="card-title">Comentarios</h3>
     <button class="btn btn-info" id="btn-toggle-comment">
-      <i class="fa fa-comments-o"></i> Post a Comment
+      <i class="fa fa-comments-o"></i> Comentar
     </button>
   </div>
   <div class="card-body ">
@@ -42,7 +42,7 @@
       <form action="/posts/{{post.fileName}}/comment" method="POST">
         <div class="form-group mb-3">
           <input type="text" class="form-control  text-black border border-primary" name="name"
-            placeholder="Name">
+            placeholder="Nombre">
         </div>
         <div class="form-group mb-3">
           <input type="email" class="form-control  text-black border border-primary" name="email"
@@ -50,11 +50,11 @@
         </div>
         <div class="form-group mb-3 ">
           <textarea name="comment" class="form-control  text-black border border-primary" rows="2"
-            placeholder="Your Comment"></textarea>
+            placeholder="Tu Comentario"></textarea>
         </div>
         <div class="form-group mb-3">
           <button class="btn btn-outline-success" id="btn-comment">
-            <i class="fa fa-comment"></i> Post
+            <i class="fa fa-comment"></i> Publicar
           </button>
         </div>
       </form>

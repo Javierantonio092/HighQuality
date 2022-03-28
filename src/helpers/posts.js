@@ -1,4 +1,4 @@
-const {Post} = require('../model');
+const {Post, User} = require('../model');
 
 module.exports = {
   async popular() {
@@ -6,6 +6,9 @@ module.exports = {
       .limit(9)
       .sort({ likes: -1 })
       .lean({ virtuals: true });
+
+   
+  
     return posts;
   },
 };

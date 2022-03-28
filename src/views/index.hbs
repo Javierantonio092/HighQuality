@@ -1,0 +1,24 @@
+<div class="row">
+    {{#each posts}}
+    <div class="card-columns" style="width:400px">
+        <div class="card animated fadeInUpBig">
+            <img src="/uploads/{{fileName}}" class="card-img-top" alt="{{title}}>">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p>{{timeago timestamp}}</p>
+                <a href="/posts/{{uniqueId}}" class="btn btn-primary" >
+                    Ver Perfil 
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+    
+
+
+
+
+
+
