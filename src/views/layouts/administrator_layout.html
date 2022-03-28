@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.css"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+  <main>  
+    <header class="py-3 mb-3 border-bottom">       
+        <div class="d-flex align-items-center">
+            <img src="logo.png" height="50px" alt="">
+            <form class="w-100">
+                <div class="mx-5 col-md-5">
+                    <input type="search" class="form-control" placeholder="Buscar en ..." aria-label="Search">
+                </div>            
+            </form>                                   
+        </div>
+      </div>
+    </header>
+    <div class="b-example-divider"></div>
+  </main>
+  
+<div class="container-fluid" id="nav-align">
+    <div class="row vh-100">        
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-1">   
+            <img src="user.png" class="mt-4 mb-1" style="margin-left: 25%;" width="100" height="auto" alt="">
+            <p class="text-center fw-bold">Username200143</p>
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">     
+                <span>Galería</span>           
+              </h6>
+          <ul class="nav flex-column fw-bold">
+            <li class="nav-item">
+              <a class="nav-link icon-color" aria-current="page" href="#">
+                <span data-feather="image"></span>
+                Recientes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link icon-color" href="#">
+                <span data-feather="music"></span>
+                Populares
+              </a>
+            </li>                
+          </ul>
+  
+       
+       
+        </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-3">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item"><a href="#">Perfil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Fotos</li>
+            </ol>
+          </nav>
+          <p class="fw-bold">Fotos</p>
+          <div class="d-flex my-3">
+            <button class="btn btn-xs text-primary border border-primary rounded-pill">Recientes</button>
+            <button class="btn btn-xs border border-dark rounded-pill mx-3">Más votados</button>
+            <button class="btn btn-xs text-muted border border-secondary rounded-pill">Mejor valorados</button>
+            <button class="btn mx-4 link-secondary">Subir  ></button>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <a href="#"><img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                    class="w-100 shadow-1-strong rounded mb-4 gallery"
+                    alt="Boat on Calm Water"/>
+                </a> 
+                <a href="#">
+                <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Wintry Mountain Landscape"
+                />
+                </a>
+            </div>
+          
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <a href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Mountains in the Clouds"
+              />
+              </a>
+          
+              <a href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Boat on Calm Water"
+              />
+              </a>              
+            </div>
+            
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <a href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Waves at Sea"
+              />
+              </a>
+          
+              <a href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Yosemite National Park"
+              />
+              </a>
+            </div>
+          </div>
+     </main>
+    </div>
+</div>   
+  
+  
+</body>
+<script>
+feather.replace()
+</script>
+<style>
+  .icon-color{
+      color: black;
+  }
+
+  #nav-align{
+      margin-top: -16px;
+  }
+  .carousel-control-prev-icon {          
+position: absolute;
+bottom: 0px;
+left: 0px;
+}
+
+.carousel-control-next-icon {
+position: absolute;
+bottom: 10px;
+right: 10px;    
+}
+.properties-top{
+  margin-top: -10px;
+}
+
+.btn-xs{
+    width: auto;
+    height: 2rem;
+    background-color: white;
+    padding: 3px 10px 15px 10px;
+}   
+
+
+</style>
+</html>
